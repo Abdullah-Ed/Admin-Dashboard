@@ -1,3 +1,7 @@
+:root{
+  --general-background-color:#fb923c;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -13,8 +17,9 @@
 .sidebar {
   display: grid;
   grid-template-rows: 150px 270px 50px 135px;
+  z-index: 2;
 
-  background-color: #fb923c;  
+  background-color: var(--general-background-color);  
 }
 
 .sidebar > div{
@@ -61,31 +66,104 @@ h1{
 .header{
   display: grid;
   grid-template-rows: 1fr 1fr ;
+  box-shadow: -20px -6px 20px 0px black,2100px -6px 3px 0px black;
+  z-index: 1;
 }
 
 .first-header{
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  grid-template-columns:  1.6fr 1fr;
   align-items: center;
 }
 
-.profile-pic{
+.notification-icon,
+.search-icon{
+  width: 30px;
+  cursor: pointer;
+}
+
+.search-icon{
+  justify-self: end;
+}
+
+.first-header > div:nth-child(1){
+  display: grid;
+  grid-template-columns:  0.3fr  3fr;
+  align-items: center;
+  column-gap: 40px;
+}
+
+label{
+  display: grid;
+}
+ 
+input{
+  border: none;
+  border-radius: 30px;
+
+  background-color: #e2e8f0;
+  font-size: 1.3rem;
+  padding: 0.7em;
+}
+
+input:focus{
+  outline:none;
+}
+
+.first-header > div +div{
+  display: grid;
+  grid-template-columns: 1.5fr 0.68fr 1.5fr;
+  align-items: center;
+}
+
+.notification-icon{
+  justify-self: end;
+}
+
+.user-profile-pic{
   width: 75px;
   height: 75px;
   border-radius: 50%;
-  object-fit: cover;
+  cursor: pointer;
+
+  justify-self: center;
+}
+
+.first-header > div > p{
+  font-weight: bold;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
 .second-header{
   display: grid;
-  grid-template-columns: 1fr 1fr  1fr;
+  grid-template-columns: 0.3fr 1.5fr  1fr;
   align-items: center;
+  column-gap: 30px;
+  font-weight: bold;
+}
+
+h2{
+  margin-top: 13px;
 }
 
 .second-header > img{
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  justify-self: end;
+}
+
+button{
+  background-color: var(--general-background-color);
+  color:white;
+
+  font-size: 1.5rem;
+  padding: 0.5em 1.5em;
+  
+  border: none;
+  border-radius: 60px;
+  margin-right: 80px;
 }
 
 .main-content{
@@ -111,4 +189,12 @@ img{
 .content-right-side{
   display: grid;
   grid-template-rows: 1fr 1fr;
+}
+
+.profile-pic{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  justify-self: center;
 }
