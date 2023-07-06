@@ -1,5 +1,6 @@
 :root{
-  --general-background-color:#fb923c;
+  --side-button-background-color:#fb923c;
+  --main-content-color:#525151;
 }
 
 *{
@@ -18,8 +19,9 @@
   display: grid;
   grid-template-rows: 150px 270px 50px 135px;
   z-index: 2;
-
-  background-color: var(--general-background-color);  
+  
+  overflow: hidden;
+  background-color: var(--side-button-background-color);  
 }
 
 .sidebar > div{
@@ -141,9 +143,10 @@ input:focus{
   align-items: center;
   column-gap: 30px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
-h2{
+.user-name{
   margin-top: 13px;
 }
 
@@ -155,7 +158,7 @@ h2{
 }
 
 button{
-  background-color: var(--general-background-color);
+  background-color: var(--side-button-background-color);
   color:white;
 
   font-size: 1.5rem;
@@ -168,7 +171,18 @@ button{
 
 .main-content{
   background-color: #f3f4f6;
+  padding-top: 50px;
+  padding-left: 50px;
 }
+
+.main-content >div:nth-child(1){  
+  display: grid;
+  grid-template-columns: 2fr 1fr ;
+
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 9px;
+} 
 
 .main-content-grid{
   background-color: #f3f4f6;
@@ -178,17 +192,55 @@ button{
 
 .cards-container{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
+  grid-template-rows:  repeat(auto-fit, minmax(50px, 1fr));
+  gap: 20px;
 }
+
+.card{
+  width: 55ch;
+  padding: 2em 7em 2em 2em;
+
+  position: relative;
+  background-color: white;
+  border-left: blue solid 12px;
+  border-radius: 8px;
+}
+
+.card > h2{
+  margin-top: 10px;
+}
+
+.card > p{
+  color:var(--main-content-color);
+  margin-top: 8px;
+  font-size: 1.4rem;
+}
+
+.img-container{
+  display: flex;
+  justify-content: end;
+  gap: 40px;
+  position:absolute;
+  bottom: 8%;
+  right: 10%;
+}
+
+.img-container > img{
+  width: 30px;
+}
+
 
 img{
   width: 20px;
+  cursor: pointer;
 }
 
 .content-right-side{
   display: grid;
   grid-template-rows: 1fr 1fr;
+  border: 2px solid red;
+
 }
 
 .profile-pic{
