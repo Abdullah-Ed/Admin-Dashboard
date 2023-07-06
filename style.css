@@ -3,6 +3,10 @@
   --main-content-color:#525151;
 }
 
+html{
+  background-color: #f3f4f6;;
+}
+
 *{
   padding: 0;
   margin: 0;
@@ -12,14 +16,14 @@
 .main-container{
   display: grid;
   grid-template-columns: 1fr 6fr;
-  grid-template-rows: 100vh;
+
 }
 
 .sidebar {
   display: grid;
-  grid-template-rows: 150px 270px 50px 135px;
+  grid-template-rows: 150px 270px 50px 135px 705px;
   z-index: 2;
-  
+
   overflow: hidden;
   background-color: var(--side-button-background-color);  
 }
@@ -192,14 +196,14 @@ button{
 
 .cards-container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(470px, 1fr));
-  grid-template-rows:  repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+  grid-template-rows:  repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
 .card{
   width: 55ch;
-  padding: 2em 7em 2em 2em;
+  padding: 2em 7em 2em 1em;
 
   position: relative;
   background-color: white;
@@ -238,8 +242,71 @@ img{
 
 .content-right-side{
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  border: 2px solid red;
+  grid-template-rows: 1.3fr 50px 1fr;
+  gap: 25px;
+  grid-template-columns: 500px;
+}
+
+.announcements-container{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 300px;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 25px;
+}
+
+.announcements-container > div{
+  background-color: white;
+  border-bottom: solid 1px #dbd5d5 ;
+}
+
+.announcements-container > div:nth-child(3){
+  border:none;
+  padding-bottom: 15px;
+}
+
+h4{
+  font-size: 1.3rem;
+  margin-top: 50px;
+}
+
+.announcements-container > div > p{
+  font-size: 1.1rem;
+  color: var(--main-content-color);
+}
+
+.content-right-side > p{
+  font-weight: 500;
+  font-size: 2rem;
+  align-self: end;
+}
+
+.users{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 400px;
+  background-color: white;
+  border-radius: 25px;
+  justify-items: center;
+}
+
+.users > div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: start;
+
+}
+
+.users > div > div{
+  display: grid;
+  gap: 5px;
+}
+
+.users > div > div > p{
+  color: var(--main-content-color);
+  cursor: pointer;
 
 }
 
