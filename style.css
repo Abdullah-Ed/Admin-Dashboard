@@ -40,6 +40,27 @@ html{
 h1{
   margin-bottom: 50px;
   cursor: pointer;
+  transition: transform .2s;
+}
+img,p{
+  transition: transform .2s;
+}
+
+.sidebar > div > img:hover,
+ img:hover + h1{
+  transform: scale(1.2);
+}
+
+.notification-icon:active,
+ img:active + h1,
+ .sidebar > div > img:active + p,
+ img:active{
+  transform: scale(0.8);
+}
+
+.sidebar > div > img:hover,
+.sidebar > div > img + p:hover {
+  transform: scale(1.2);
 }
 
 
@@ -71,7 +92,7 @@ h1{
 
 .header{
   display: grid;
-  grid-template-rows: 1fr 1fr ;
+  grid-template-rows: repeat(2,minmax(50px,1fr)) ;
   box-shadow: -20px -6px 20px 0px black,2100px -6px 3px 0px black;
   z-index: 1;
 }
@@ -145,9 +166,10 @@ input:focus{
   display: grid;
   grid-template-columns: 0.3fr 1.5fr  1fr;
   align-items: center;
+  align-content: space-between;
   column-gap: 30px;
+
   font-weight: bold;
-  margin-bottom: 8px;
 }
 
 .user-name{
@@ -161,6 +183,11 @@ input:focus{
   justify-self: end;
 }
 
+.button-container{
+  display: grid;
+  grid-auto-flow: column;
+}
+
 button{
   background-color: var(--side-button-background-color);
   color:white;
@@ -171,6 +198,14 @@ button{
   border: none;
   border-radius: 60px;
   margin-right: 80px;
+}
+
+button:active{
+  transform: scale(0.97);
+}
+
+button:hover{
+  opacity: 0.87;
 }
 
 .main-content{
@@ -196,19 +231,24 @@ button{
 
 .cards-container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(570px, 1fr));
   grid-template-rows:  repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
 
 .card{
   width: 55ch;
-  padding: 2em 7em 2em 1em;
+  padding: 2em 5em 4em 2em;
 
   position: relative;
   background-color: white;
   border-left: blue solid 12px;
   border-radius: 8px;
+  transition: transform .2s
+}
+
+.card:hover{
+  transform: scale(1.02);
 }
 
 .card > h2{
@@ -233,7 +273,6 @@ button{
 .img-container > img{
   width: 30px;
 }
-
 
 img{
   width: 20px;
